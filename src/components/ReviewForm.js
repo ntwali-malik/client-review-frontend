@@ -7,6 +7,7 @@ function ReviewForm({ onReviewSubmit }) {
     reviewText: '',
     rating: 1
   });
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +22,10 @@ function ReviewForm({ onReviewSubmit }) {
       if (response.ok) {
         onReviewSubmit();
         setFormData({ clientName: '', reviewText: '', rating: 1 });
+        setShowThankYou(true);
+        setTimeout(() => {
+          setShowThankYou(false);
+        }, 3000); // Hide after 3 seconds
       }
     } catch (error) {
       console.error('Error submitting review:', error);
@@ -35,34 +40,45 @@ function ReviewForm({ onReviewSubmit }) {
   };
 
   return (
-    <form className="review-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="clientName"
-        value={formData.clientName}
-        onChange={handleChange}
-        placeholder="Your Name"
-        required
-      />
-      <textarea
-        name="reviewText"
-        value={formData.reviewText}
-        onChange={handleChange}
-        placeholder="Write your review"
-        required
-      />
-      <select
-        name="rating"
-        value={formData.rating}
-        onChange={handleChange}
-        required
-      >
-        {[1, 2, 3, 4, 5].map(num => (
-          <option key={num} value={num}>{num}</option>
-        ))}
-      </select>
-      <button type="submit">Submit Review</button>
-    </form>
+    <>
+      <form className="review-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="clientName"
+          value={formData.clientName}
+          onChange={handleChange}
+          placeholder="Your Name"
+          required
+        />
+        <textarea
+          name="reviewText"
+          value={formData.reviewText}
+          onChange={handleChange}
+          placeholder="Write your review"
+          required
+        />
+        <select
+          name="rating"
+          value={formData.rating}
+          onChange={handleChange}
+          required
+        >
+          {[1, 2, 3, 4, 5].map(num => (
+            <option key={num} value={num}>{num}</option>
+          ))}
+        </select>
+        <button type="submit">Submit Review</button>
+      </form>
+
+      {showThankYou && (
+        <div className="thank-you-popup">
+          <div className="popup-content">
+            <h3>Thank You!</h3>
+            <p>We appreciate your valuable feedback.</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
