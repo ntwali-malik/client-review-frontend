@@ -20,9 +20,9 @@ function ReviewForm({ onReviewSubmit }) {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        onReviewSubmit();
         setFormData({ clientName: '', reviewText: '', rating: 1 });
         setShowThankYou(true);
+        onReviewSubmit();
         setTimeout(() => {
           setShowThankYou(false);
         }, 3000); // Hide after 3 seconds
