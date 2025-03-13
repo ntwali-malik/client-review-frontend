@@ -11,7 +11,7 @@ function ReviewForm({ onReviewSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://client-review-backend.vercel.app/api/review', {
+      const response = await fetch('https://client-review-backend.onrender.com/api/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
