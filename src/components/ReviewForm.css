@@ -20,6 +20,7 @@
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .review-form textarea {
@@ -122,6 +123,7 @@ body {
   .review-form textarea,
   .review-form select {
     font-size: 14px;
+    padding: 10px;
   }
 
   .review-form button {
