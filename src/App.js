@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import WelcomeMessage from './components/WelcomeMessage';
 import ReviewForm from './components/ReviewForm';
 import AdminDashboard from './components/Admin/AdminDashboard';
 import ReviewList from './components/ReviewList';
@@ -29,12 +30,13 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <WelcomeMessage />
         <Routes>
           <Route path="/" element={
             <div>
               <h1>Customer Feedback</h1>
               <ReviewForm onReviewSubmit={handleReviewSubmit} />
-              {/* <ReviewList reviews={reviews} /> */}
+              <ReviewList reviews={reviews} />
             </div>
           } />
           <Route path="/admin" element={<AdminDashboard />} />
