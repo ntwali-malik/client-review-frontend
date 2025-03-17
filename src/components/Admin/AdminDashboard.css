@@ -70,5 +70,11 @@
   .reviews-table th,
   .reviews-table td {
     padding: 0.5rem;
+    font-size: 14px;
+  }
+
+  .delete-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
   }
 } 
