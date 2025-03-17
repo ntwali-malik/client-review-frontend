@@ -33,4 +33,15 @@
   color: #7f8c8d;
   font-size: 0.875rem;
   margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .review-card {
+    padding: 1rem;
+  }
+
+  .review-card h3 {
+    font-size: 1.1rem;
+  }
 } 

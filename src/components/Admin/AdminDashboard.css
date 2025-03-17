@@ -59,4 +59,16 @@
   padding: 2rem;
   font-size: 1.2rem;
   color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+
+  .reviews-table th,
+  .reviews-table td {
+    padding: 0.5rem;
+  }
 } 

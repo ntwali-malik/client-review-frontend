@@ -5,4 +5,11 @@
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .reviews-container {
+    grid-template-columns: 1fr; /* Stack items on small screens */
+  }
 } 

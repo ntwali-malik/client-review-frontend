@@ -108,4 +108,15 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .review-form {
+    padding: 1.5rem;
+  }
+
+  .review-form button {
+    padding: 10px;
+  }
 } 
