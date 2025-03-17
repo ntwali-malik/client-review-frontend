@@ -34,7 +34,7 @@ function App() {
             <div>
               <h1>Customer Feedback</h1>
               <ReviewForm onReviewSubmit={handleReviewSubmit} />
-              <ReviewList reviews={reviews} />
+              {/* <ReviewList reviews={reviews} /> */}
             </div>
           } />
           <Route path="/admin" element={<AdminDashboard />} />
